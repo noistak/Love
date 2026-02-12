@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #000;
+    font-family: 'Unbounded', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Главный экран */
+.hero {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== Заголовок ===== */
+
+.title-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero h1 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 50px;
+    line-height: 1.4;
+}
+
+/* Корона */
+.crown {
+    position: absolute;
+    width: 40px;
+    top: -30px;
+    left: 0;
+}
+
+/* Линии у буквы о */
+.letter-o {
+    position: relative;
+    display: inline-block;
+}
+
+.lines {
+    position: absolute;
+    width: 30px;
+    right: -35px;
+    top: -5px;
+}
+
+/* ===== Кнопка ===== */
+
+.button-wrapper {
+    position: relative;
+}
+
+.start-btn {
+    padding: 14px 42px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: "Segoe Script", cursive;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.start-btn:active {
+    transform: scale(0.96);
+}
+
+/* Стрелка */
+.arrow {
+    position: absolute;
+    width: 70px;
+    right: -90px;
+    bottom: -20px;
+}
+
+/* ===== Декор ===== */
+
+.decor {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.decor-top {
+    top: 0;
+}
+
+.decor-bottom {
+    bottom: 0;
+}
