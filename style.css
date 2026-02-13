@@ -182,11 +182,97 @@ p {
 }
 
 .vector {
-  right: 50px;   /* регулируй */
+  right: 70px;   /* регулируй */
   bottom: 600px;
 }
 
 .vector2 {
   left: 70px;   /* регулируй */
   bottom: 400px;
+}
+
+
+
+/* Экран 3 */
+#screen3 {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  padding: 60px 20px;
+  overflow-y: auto;
+
+  display: block;          /* отключаем flex */
+  text-align: center;      /* центрируем текст */
+}
+/* Центровая надпись */
+.intro-text {
+  font-size: 25px;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.intro-text.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-text.to-top {
+  margin-top: 40px;
+}
+
+/* Таймлайн */
+.timeline-wrapper {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.timeline-wrapper.visible {
+  opacity: 1;
+}
+
+.timeline {
+  max-width: 900px;
+  margin: 40px auto 80px;
+}
+
+/* Элемент */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+.photo-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.event-text {
+  max-width: 400px;
+  font-size: 18px;
+}
+
+/* Footer */
+.timeline-footer {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.timeline-footer p {
+  font-size: 22px;
+  margin-bottom: 30px;
 }
