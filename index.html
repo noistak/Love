@@ -1,87 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Для тебя</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Segoe+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+Script:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="container">
-        <!-- Экран 1 -->
-        <div id="screen1" class="screen active">
-            <div class="content">
-                <h1 class="title">Есть кое-что для тебя</h1>
-                <button class="btn" onclick="nextScreen(1)">начать</button>
-            </div>
+      <!-- Экран 1 -->
+      <div id="screen1" class="screen active">
+        <div class="content">
+          <h1 class="title">Есть кое-что для тебя</h1>
+          <button class="btn" onclick="nextScreen(1)">начать</button>
         </div>
+      </div>
 
-        <!-- Экран 2 -->
-        <div id="screen2" class="screen hidden">
-            <div class="content">
-                <h2 class="subtitle">Все начинается с одного момента</h2>
-                <p class="subtext">У нас их стало больше</p>
-                <button class="btn" onclick="nextScreen(2)">смотреть</button>
-            </div>
+      <!-- Экран 2 -->
+      <div id="screen2" class="screen hidden">
+        <div class="content">
+          <h2 class="subtitle">Все начинается с одного момента</h2>
+          <p class="subtext">У нас их стало больше</p>
+          <button class="btn" onclick="nextScreen(2)">смотреть</button>
         </div>
+      </div>
 
-        <!-- Экран 3 -->
-        <div id="screen3" class="screen hidden">
-            <div class="content">
-                <div class="important-text" id="importantText">То, что стало важным</div>
-                <div class="timeline-container" id="timelineContainer" style="display: none;">
-                    <!-- Хронология будет добавлена через JavaScript -->
-                </div>
-                <div class="after-timeline" id="afterTimeline" style="display: none; margin-top: 40px;">
-                    <h2 class="after-title">И это только начало</h2>
-                    <button class="btn" onclick="nextScreen(3)">дальше</button>
-                </div>
-            </div>
+      <!-- Экран 3 -->
+      <div id="screen3" class="screen hidden">
+        <div class="content">
+          <div class="important-text" id="importantText">
+            То, что стало важным
+          </div>
+          <div
+            class="timeline-container"
+            id="timelineContainer"
+            style="display: none"
+          >
+            <!-- Хронология будет добавлена через JavaScript -->
+          </div>
+          <div
+            class="after-timeline"
+            id="afterTimeline"
+            style="display: none; margin-top: 40px"
+          >
+            <h2 class="after-title">И это только начало</h2>
+            <button class="btn" onclick="nextScreen(3)">дальше</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Экран 4 - Музыка -->
-        <div id="screen4" class="screen hidden">
-            <div class="content">
-                <h2 class="music-title">Звук, в котором <span class="highlight">ты</span></h2>
-                <p class="music-subtext">Каждая песня - про момент с тобой</p>
-                <div class="playlist-container">
-                    <iframe frameborder="0" allow="clipboard-write" style="border:none;width:100%;height:400px;" width="614" height="556" src="https://music.yandex.ru/iframe/playlist/ntsurikoff/1023"></iframe>
-                </div>
-                <div class="music-buttons" style="margin-top: 20px; display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 300px;">
-                    <a href="https://music.yandex.ru/playlists/02e904c4-458e-47a3-a2d4-fee21345f047" target="_blank" class="btn btn-playlist">включить</a>
-                    <button class="btn" onclick="nextScreen(4)">дальше</button>
-                </div>
-            </div>
+      <!-- Экран 4 - Музыка -->
+      <div id="screen4" class="screen hidden">
+        <div class="content">
+          <h2 class="music-title">
+            Звук, в котором <span class="highlight">ты</span>
+          </h2>
+          <p class="music-subtext">Каждая песня - про момент с тобой</p>
+          <div class="playlist-container">
+            <iframe
+              frameborder="0"
+              allow="clipboard-write"
+              style="border: none; width: 100%; height: 400px"
+              width="614"
+              height="556"
+              src="https://music.yandex.ru/iframe/playlist/ntsurikoff/1023"
+            ></iframe>
+          </div>
+          <div
+            class="music-buttons"
+            style="
+              margin-top: 20px;
+              display: flex;
+              flex-direction: column;
+              gap: 15px;
+              width: 100%;
+              max-width: 300px;
+            "
+          >
+            <a
+              href="https://music.yandex.ru/playlists/02e904c4-458e-47a3-a2d4-fee21345f047"
+              target="_blank"
+              class="btn btn-playlist"
+              >включить</a
+            >
+            <button class="btn" onclick="nextScreen(4)">дальше</button>
+          </div>
         </div>
+      </div>
 
-        <!-- Экран 5 - Послание -->
-        <div id="screen5" class="screen hidden">
-            <div class="content">
-                <div class="message-container">
-                    <p class="message-line" id="line1">С тобой все стало глубже, чем я ожидал.</p>
-                    <p class="message-line" id="line2" style="opacity: 0;">И я рад, что именно ты рядом.</p>
-                    <p class="message-line" id="line3" style="opacity: 0;">Это только начало.</p>
-                    <p class="message-line" id="line4" style="opacity: 0;">Я хочу идти дальше с тобой.</p>
-                    <p class="message-line" id="line5" style="opacity: 0;">С 14.02 - еще один наш маленький старт</p>
-                </div>
-                <button class="btn" id="finalBtn" style="opacity: 0; margin-top: 40px;" onclick="nextScreen(5)">Закрепить этот момент</button>
-            </div>
+      <!-- Экран 5 - Послание -->
+      <div id="screen5" class="screen hidden">
+        <div class="content">
+          <div class="message-container">
+            <p class="message-line" id="line1">
+              С тобой все стало глубже, чем я ожидал.
+            </p>
+            <p class="message-line" id="line2" style="opacity: 0">
+              И я рад, что именно ты рядом.
+            </p>
+            <p class="message-line" id="line3" style="opacity: 0">
+              Это только начало.
+            </p>
+            <p class="message-line" id="line4" style="opacity: 0">
+              Я хочу идти дальше с тобой.
+            </p>
+            <p class="message-line" id="line5" style="opacity: 0">
+              С 14.02 - еще один наш маленький старт
+            </p>
+          </div>
+          <button
+            class="btn"
+            id="finalBtn"
+            style="opacity: 0; margin-top: 40px"
+            onclick="nextScreen(5)"
+          >
+            Закрепить этот момент
+          </button>
         </div>
+      </div>
 
-        <!-- Экран 6 - Финальный -->
-        <div id="screen6" class="screen hidden">
-            <div class="content">
-                <div class="final-text-container">
-                    <p class="final-line" id="finalLine1">Я выбираю тебя.</p>
-                    <p class="final-line" id="finalLine2" style="opacity: 0;">И буду выбирать дальше</p>
-                </div>
-                <button class="btn-text" onclick="restart()">начало</button>
-            </div>
+      <!-- Экран 6 - Финальный -->
+      <div id="screen6" class="screen hidden">
+        <div class="content">
+          <div class="final-text-container">
+            <p class="final-line" id="finalLine1">Я выбираю тебя.</p>
+            <p class="final-line" id="finalLine2" style="opacity: 0">
+              И буду выбирать дальше
+            </p>
+          </div>
+          <button class="btn-text" onclick="restart()">начало</button>
         </div>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
