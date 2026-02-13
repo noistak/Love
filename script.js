@@ -20,3 +20,36 @@ startBtn.addEventListener('click', () => {
 
   }, 1000);
 });
+
+const watchBtn = document.querySelector('#screen2 .btn');
+const screen3 = document.getElementById('screen3');
+const introText = document.getElementById('introText');
+const timelineWrapper = document.getElementById('timelineWrapper');
+
+watchBtn.addEventListener('click', () => {
+
+  // скрываем экран 2
+  screen2.classList.remove('screen--active');
+
+  setTimeout(() => {
+    screen3.classList.add('screen--active');
+
+    // показываем центральный текст
+    setTimeout(() => {
+      introText.classList.add('active');
+    }, 300);
+
+    // через 2 секунды перенос вверх
+    setTimeout(() => {
+      introText.classList.add('to-top');
+
+      // показываем таймлайн
+      setTimeout(() => {
+        timelineWrapper.classList.add('visible');
+      }, 800);
+
+    }, 2300);
+
+  }, 1000);
+
+});
