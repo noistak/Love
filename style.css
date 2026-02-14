@@ -21,15 +21,18 @@ body {
 
 /* Общий экран */
 .screen {
-  display: none;
-  min-height: 100svh;
+  min-height: 100svh;   /* современный безопасный viewport */
   width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+  pointer-events: none;
 }
 
 .screen--active {
-  display: block;
+  opacity: 1;
+  pointer-events: all;
+  position: relative;
 }
-
 
 .content {
   max-width: 800px;
@@ -96,6 +99,7 @@ p {
 /* Фон первого экрана */
 .screen--hero {
   background: linear-gradient(135deg, #111 0%, #000 100%);
+  position: absolute;
   overflow: hidden;
 }
 
@@ -140,7 +144,7 @@ p {
 }
 
 .hero-title {
-  font-size: clamp(28px, 7vw, 42px);
+  font-size: 42px;
   font-weight: 600;
   line-height: 1.3;
 }
@@ -196,8 +200,12 @@ p {
 
 /* Экран 3 */
 #screen3 {
+  position: absolute;
+  inset: 0;
   background: #000;
   padding: 60px 20px;
+
+  display: block;          /* отключаем flex */
   text-align: center;      /* центрируем текст */
 }
 /* Центровая надпись */
@@ -279,7 +287,10 @@ p {
 
 /* Экран 4 */
 #screen4 {
+  position: absolute;
+  inset: 0;
   background: #111;
+  display: block;
   padding: 80px 20px;
   text-align: center;
 }
@@ -328,6 +339,8 @@ p {
 
 /* Экран 5 */
 #screen5 {
+  position: absolute;
+  inset: 0;
   background: #000;
   display: flex;
   justify-content: center;
@@ -373,6 +386,8 @@ p {
 
 /* Экран 6 */
 #screen6 {
+  position: absolute;
+  inset: 0;
   background: #000;
   display: flex;
   justify-content: center;
@@ -438,6 +453,8 @@ p {
 #screen3,
 #screen4 {
   display: block;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* важно для iOS */
 }
 
 
