@@ -53,3 +53,77 @@ watchBtn.addEventListener('click', () => {
   }, 1000);
 
 });
+
+
+
+const nextBtn3 = document.querySelector('#screen3 .timeline-footer .btn');
+const screen4 = document.getElementById('screen4');
+
+nextBtn3.addEventListener('click', () => {
+  screen3.classList.remove('screen--active');
+
+  setTimeout(() => {
+    screen4.classList.add('screen--active');
+  }, 800);
+});
+
+
+
+
+
+
+const nextBtn4 = document.querySelector('#screen4 .music-buttons .btn:last-child');
+const screen5 = document.getElementById('screen5');
+const lines = document.querySelectorAll('#screen5 .line');
+
+nextBtn4.addEventListener('click', () => {
+  screen4.classList.remove('screen--active');
+
+  setTimeout(() => {
+    screen5.classList.add('screen--active');
+
+    // поочерёдное появление строк
+    lines.forEach((line, index) => {
+      setTimeout(() => {
+        line.classList.add('visible');
+      }, index * 2000);
+    });
+
+  }, 800);
+});
+
+
+
+const finalBtn = document.getElementById('toFinalScreen');
+const screen6 = document.getElementById('screen6');
+const ultimateLines = document.querySelectorAll('#screen6 .ultimate-line');
+const restartBtn = document.getElementById('restart');
+
+finalBtn.addEventListener('click', () => {
+  screen5.classList.remove('screen--active');
+
+  setTimeout(() => {
+    screen6.classList.add('screen--active');
+
+    ultimateLines.forEach((line, index) => {
+      setTimeout(() => {
+        line.classList.add('visible');
+      }, index * 2000);
+    });
+
+  }, 800);
+});
+
+/* Возврат к началу */
+restartBtn.addEventListener('click', () => {
+  screen6.classList.remove('screen--active');
+
+  // сброс анимаций
+  document.querySelectorAll('.visible').forEach(el => {
+    el.classList.remove('visible');
+  });
+
+  setTimeout(() => {
+    document.getElementById('screen1').classList.add('screen--active');
+  }, 800);
+});
