@@ -245,6 +245,7 @@ p {
 }
 
 .intro-text {
+  
   font-size: clamp(24px, 6vw, 32px);
   opacity: 0;
   margin-top: 45vh;                  /* Стартовая позиция – центр */
