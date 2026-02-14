@@ -1,14 +1,22 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
+  min-height: 100vh;
   font-family: 'Unbounded', sans-serif;
-  overflow-x: hidden;
   background: #1F1F1F;
   color: #fff;
+  overflow-x: hidden;
 }
 
 /* Общий экран */
@@ -34,13 +42,13 @@ body {
 
 /* Заголовки */
 h1 {
-  font-size: 30px;
+  font-size: clamp(24px, 6vw, 42px);
   font-weight: 600;
   margin-bottom: 20px;
 }
 
 p {
-  font-size: 15px;
+  font-size: clamp(14px, 4vw, 16px);
   font-weight: 400;
   margin-bottom: 25px;
   opacity: 0.8;
@@ -323,7 +331,12 @@ p {
   flex-wrap: wrap;
 }
 
-
+.music-player iframe {
+  width: 100%;
+  max-width: 614px;
+  aspect-ratio: 614 / 556;
+  height: auto;
+}
 
 
 
@@ -430,7 +443,6 @@ p {
   opacity: 1;
 }
 
-
 #screen1,
 #screen2,
 #screen5,
@@ -446,4 +458,17 @@ p {
   display: block;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; /* важно для iOS */
+}
+
+
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .event-text {
+    max-width: 100%;
+  }
 }
