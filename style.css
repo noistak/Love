@@ -328,13 +328,6 @@ p {
   flex-wrap: wrap;
 }
 
-.music-player iframe {
-  width: 100%;
-  max-width: 614px;
-  aspect-ratio: 614 / 556;
-  height: auto;
-}
-
 
 
 /* Экран 5 */
@@ -469,3 +462,4 @@ p {
     max-width: 100%;
   }
 }
+
