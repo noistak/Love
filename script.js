@@ -1,129 +1,218 @@
-const startBtn = document.getElementById('startBtn');
-const screen1 = document.getElementById('screen1');
-const screen2 = document.getElementById('screen2');
-const steps = document.querySelectorAll('#screen2 .step');
+// Данные для хронологии
+const timelineData = [
+  {
+    date: "30 декабря",
+    img: "img/1.png",
+    text: "Интересное знакомство. Сообщение, с которого все сдвинулось",
+  },
+  {
+    date: "2 января",
+    img: "img/2.png",
+    text: "Первая встреча. Прогулка. Кино. Реальность оказалась лучше переписки",
+  },
+  {
+    date: "7 января",
+    img: "img/3.png",
+    text: "Рождество. Первый подарок - маленький, но важный",
+  },
+  {
+    date: "8 января",
+    img: "img/4.png",
+    text: "Впервые проводил тебя до дома. Не хотелось, чтобы вечер заканчивался",
+  },
+  {
+    date: "10 января",
+    img: "img/5.png",
+    text: "Первый кружок от тебя. Поймал себя на том, что пересматриваю",
+  },
+  {
+    date: "22 января",
+    img: "img/6.png",
+    text: "Первый совместный просмотр фильма у меня",
+  },
+  {
+    date: "28 января",
+    img: "img/7.png",
+    text: "Первый поцелуй. Точка, после которой все стало иначе",
+  },
+  {
+    date: "14 февраля",
+    img: "img/8.png",
+    text: "Первый мой интерактивный подарок",
+  },
+];
 
-startBtn.addEventListener('click', () => {
-  // Плавно скрываем первый экран
-  screen1.classList.remove('screen--active');
+// Навигация
+const screens = document.querySelectorAll(".screen");
+
+function showScreen(id) {
+  screens.forEach((screen) => screen.classList.remove("active"));
+  document.getElementById(id).classList.add("active");
+  window.scrollTo(0, 0);
+}
+
+// Экран 1 -> 2
+const startBtn = document.getElementById("startBtn");
+const screen1 = document.getElementById("screen1");
+const screen2 = document.getElementById("screen2");
+const steps = document.querySelectorAll("#screen2 .step");
+
+startBtn.addEventListener("click", () => {
+  screen1.classList.remove("active");
 
   setTimeout(() => {
-    // Показываем второй экран
-    screen2.classList.add('screen--active');
+    showScreen("screen2");
 
-    // Пошаговая анимация
     steps.forEach((el, index) => {
       setTimeout(() => {
-        el.classList.add('step--visible');
+        el.classList.add("step--visible");
       }, index * 600);
     });
-
   }, 1000);
 });
 
-const watchBtn = document.querySelector('#screen2 .btn');
-const screen3 = document.getElementById('screen3');
-const introText = document.getElementById('introText');
-const timelineWrapper = document.getElementById('timelineWrapper');
+// Экран 2 -> 3
+const watchBtn = document.querySelector("#screen2 .btn");
+const screen3 = document.getElementById("screen3");
+const introText = document.getElementById("introText");
+const timelineWrapper = document.getElementById("timelineWrapper");
+const timelineContainer = document.getElementById("timelineContainer");
 
-watchBtn.addEventListener('click', () => {
-
-  // скрываем экран 2
-  screen2.classList.remove('screen--active');
+watchBtn.addEventListener("click", () => {
+  screen2.classList.remove("active");
 
   setTimeout(() => {
-    screen3.classList.add('screen--active');
+    showScreen("screen3");
 
-    // показываем центральный текст
+    // Показываем центральный текст
     setTimeout(() => {
-      introText.classList.add('active');
+      introText.classList.add("active");
     }, 300);
 
-    // через 2 секунды перенос вверх
+    // Перемещаем текст вверх и показываем таймлайн
     setTimeout(() => {
-      introText.classList.add('to-top');
+      introText.classList.add("to-top");
 
-      // показываем таймлайн
       setTimeout(() => {
-        timelineWrapper.classList.add('visible');
+        timelineWrapper.classList.add("visible");
+        createTimeline();
       }, 800);
-
     }, 2300);
-
   }, 1000);
-
 });
 
+// Создание элементов хронологии
+function createTimeline() {
+  timelineContainer.innerHTML = "";
 
+  timelineData.forEach((item, index) => {
+    const itemDiv = document.createElement("div");
+    itemDiv.className = `timeline-item ${index % 2 === 1 ? "right" : "left"}`;
 
-const nextBtn3 = document.querySelector('#screen3 .timeline-footer .btn');
-const screen4 = document.getElementById('screen4');
+    const photoBlock = document.createElement("div");
+    photoBlock.className = "photo-block";
 
-nextBtn3.addEventListener('click', () => {
-  screen3.classList.remove('screen--active');
+    const dateDiv = document.createElement("div");
+    dateDiv.className = "date";
+    dateDiv.textContent = item.date;
+
+    const img = document.createElement("img");
+    img.src = item.img;
+    img.width = 161;
+    img.height = 161;
+    img.alt = "";
+    img.onerror = () => {
+      img.style.background = "#333";
+      img.style.display = "block";
+    };
+
+    photoBlock.appendChild(dateDiv);
+    photoBlock.appendChild(img);
+
+    const eventText = document.createElement("div");
+    eventText.className = "event-text";
+    eventText.textContent = item.text;
+
+    itemDiv.appendChild(photoBlock);
+    itemDiv.appendChild(eventText);
+    timelineContainer.appendChild(itemDiv);
+
+    // Анимация появления элементов
+    setTimeout(
+      () => {
+        itemDiv.classList.add("visible");
+      },
+      100 + index * 250,
+    );
+  });
+}
+
+// Экран 3 -> 4
+const nextBtn3 = document.querySelector("#screen3 .timeline-footer .btn");
+const screen4 = document.getElementById("screen4");
+
+nextBtn3.addEventListener("click", () => {
+  screen3.classList.remove("active");
 
   setTimeout(() => {
-    screen4.classList.add('screen--active');
+    showScreen("screen4");
   }, 800);
 });
 
+// Экран 4 -> 5
+const nextBtn4 = document.querySelector(
+  "#screen4 .music-buttons .btn:last-child",
+);
+const screen5 = document.getElementById("screen5");
+const lines = document.querySelectorAll("#screen5 .line");
 
-
-
-
-
-const nextBtn4 = document.querySelector('#screen4 .music-buttons .btn:last-child');
-const screen5 = document.getElementById('screen5');
-const lines = document.querySelectorAll('#screen5 .line');
-
-nextBtn4.addEventListener('click', () => {
-  screen4.classList.remove('screen--active');
+nextBtn4.addEventListener("click", () => {
+  screen4.classList.remove("active");
 
   setTimeout(() => {
-    screen5.classList.add('screen--active');
+    showScreen("screen5");
 
-    // поочерёдное появление строк
     lines.forEach((line, index) => {
       setTimeout(() => {
-        line.classList.add('visible');
+        line.classList.add("visible");
       }, index * 2000);
     });
-
   }, 800);
 });
 
+// Экран 5 -> 6
+const finalBtn = document.getElementById("toFinalScreen");
+const screen6 = document.getElementById("screen6");
+const ultimateLines = document.querySelectorAll("#screen6 .ultimate-line");
 
-
-const finalBtn = document.getElementById('toFinalScreen');
-const screen6 = document.getElementById('screen6');
-const ultimateLines = document.querySelectorAll('#screen6 .ultimate-line');
-const restartBtn = document.getElementById('restart');
-
-finalBtn.addEventListener('click', () => {
-  screen5.classList.remove('screen--active');
+finalBtn.addEventListener("click", () => {
+  screen5.classList.remove("active");
 
   setTimeout(() => {
-    screen6.classList.add('screen--active');
+    showScreen("screen6");
 
     ultimateLines.forEach((line, index) => {
       setTimeout(() => {
-        line.classList.add('visible');
+        line.classList.add("visible");
       }, index * 2000);
     });
-
   }, 800);
 });
 
-/* Возврат к началу */
-restartBtn.addEventListener('click', () => {
-  screen6.classList.remove('screen--active');
+// Возврат к началу
+const restartBtn = document.getElementById("restart");
 
-  // сброс анимаций
-  document.querySelectorAll('.visible').forEach(el => {
-    el.classList.remove('visible');
-  });
+restartBtn.addEventListener("click", () => {
+  screen6.classList.remove("active");
+
+  // Сброс всех анимаций
+  document
+    .querySelectorAll(".step--visible, .visible, .active, .to-top")
+    .forEach((el) => {
+      el.classList.remove("step--visible", "visible", "active", "to-top");
+    });
 
   setTimeout(() => {
-    document.getElementById('screen1').classList.add('screen--active');
+    showScreen("screen1");
   }, 800);
 });
