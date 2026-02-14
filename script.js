@@ -177,6 +177,14 @@ nextBtn4.addEventListener("click", () => {
         line.classList.add("visible");
       }, index * 2000);
     });
+
+    // Показываем кнопку после появления последней строки
+    const totalLines = lines.length;
+    const lastLineDelay = (totalLines - 1) * 2000; // когда появится последняя строка
+    // Добавляем 300 мс, чтобы анимация строки точно завершилась
+    setTimeout(() => {
+      document.querySelector('.final-button').classList.add('visible');
+    }, lastLineDelay + 300);
   }, 800);
 });
 
