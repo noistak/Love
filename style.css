@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Unbounded', sans-serif;
-  overflow: hidden;
+  overflow-x: hidden;
   background: #1F1F1F;
   color: #fff;
 }
@@ -431,3 +431,4 @@ p {
 .text-btn:hover {
   opacity: 1;
 }
+
