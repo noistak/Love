@@ -146,13 +146,17 @@ p {
 
 .decor-top2 {
   top: 0;
-  width: min(2050px, 120vw);
+  width: 100%;                /* Растянуть на всю ширину родителя (экрана) */
+  height: auto;               /* Сохранить пропорции */
+  object-fit: cover;          /* При необходимости обрезать, чтобы заполнить область */
 }
 
 .decor-bottom2 {
   bottom: 0;
   left: 0;
-  width: min(2050px, 120vw);
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .vector {
@@ -639,4 +643,5 @@ div {
     font-size: 1.2rem;
   }
 }
+
 
