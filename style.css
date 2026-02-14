@@ -263,7 +263,8 @@ p {
 
 .event-text {
   max-width: 400px;
-  font-size: 18px;
+  font-size: 15px;
+  opacity: 0.85;
 }
 
 /* Footer */
@@ -273,6 +274,160 @@ p {
 }
 
 .timeline-footer p {
+  font-size: 15px;
+  margin-bottom: 50px;
+}
+
+
+
+
+/* Экран 4 */
+#screen4 {
+  position: absolute;
+  inset: 0;
+  background: #111;
+  overflow-y: auto;
+  display: block;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.music-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.music-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.pink {
+  color: #ff4fa3;
+}
+
+.music-subtitle {
+  font-size: 16px;
+  margin-bottom: 40px;
+  opacity: 0.8;
+}
+
+.music-player {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.music-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+/* Экран 5 */
+#screen5 {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.final-container {
+  max-width: 800px;
+}
+
+.final-text {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.line {
+  font-size: 20px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.highlight {
   font-size: 22px;
-  margin-bottom: 30px;
+}
+
+.final-button {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* Экран 6 */
+#screen6 {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.ultimate-container {
+  max-width: 800px;
+}
+
+.ultimate-text {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ultimate-line {
+  font-size: 26px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.ultimate-line.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Кнопка-текст */
+.ultimate-button {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  text-align: center;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.text-btn:hover {
+  opacity: 1;
 }
