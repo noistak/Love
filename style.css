@@ -431,3 +431,19 @@ p {
 }
 
 
+#screen1,
+#screen2,
+#screen5,
+#screen6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#screen3,
+#screen4 {
+  display: block;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* важно для iOS */
+}
