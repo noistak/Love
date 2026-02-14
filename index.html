@@ -1,258 +1,143 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Love</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Для тебя</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Segoe+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="app-container"
+      style="height: 100%; width: 100%; position: relative"
+    >
+      <!-- Экран 1 -->
+      <section class="screen active" id="screen1">
+        <img src="img/top.png" alt="" class="decor decor-top" />
+        <img src="img/bottom.png" alt="" class="decor decor-bottom" />
 
-  <!-- Unbounded -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600&display=swap" rel="stylesheet">
+        <div class="content">
+          <h1 class="hero-title">
+            <span class="word-e">
+              Е
+              <img src="img/crown.png" alt="" class="crown" /> </span
+            >сть
+            <span class="word-k">
+              кое-что
+              <img src="img/lines.png" alt="" class="lines" />
+            </span>
+            для тебя
+          </h1>
+          <button class="btn" id="startBtn">
+            Начать
+            <img src="img/arrow.png" alt="" class="arrow" />
+          </button>
+        </div>
+      </section>
 
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+      <!-- Экран 2 -->
+      <section class="screen" id="screen2">
+        <img src="img/top2.png" alt="" class="decor decor-top2" />
+        <img src="img/bottom2.png" alt="" class="decor decor-bottom2" />
+        <img src="img/vector.png" alt="" class="decor vector" />
+        <img src="img/vector2.png" alt="" class="decor vector2" />
 
-  <!-- Экран 1 -->
-  <section class="screen screen--active screen--hero" id="screen1">
+        <div class="content">
+          <h2 class="step step-1">Все начинается с одного момента</h2>
+          <p class="step step-2">У нас их стало больше</p>
+          <button class="btn step step-3">Смотреть</button>
+        </div>
+      </section>
 
-  <img src="img/top.png" alt="" class="decor decor-top">
-  <img src="img/bottom.png" alt="" class="decor decor-bottom">
+      <!-- Экран 3 - Хронология -->
+      <section class="screen" id="screen3">
+        <h1 class="intro-text" id="introText">То, что стало важным</h1>
 
-  <div class="content">
-    <h1 class="hero-title">
-      <span class="word-e">
-        Е
-        <img src="img/crown.png" alt="" class="crown">
-      </span>сть 
-      <span class="word-k">
-        кое-что
-        <img src="img/lines.png" alt="" class="lines">
-      </span>
-      для тебя
-    </h1>
+        <div class="timeline-wrapper" id="timelineWrapper">
+          <div class="timeline" id="timelineContainer"></div>
 
-    <button class="btn" id="startBtn">
-      Начать
-      <img src="img/arrow.png" alt="" class="arrow">
-    </button>
-  </div>
-</section>
+          <div class="timeline-footer" id="timelineFooter">
+            <p>И это только начало</p>
+            <button class="btn">Дальше</button>
+          </div>
+        </div>
+      </section>
 
-  <!-- Экран 2 -->
-  <section class="screen" id="screen2">
-    <img src="img/top2.png" alt="" class="decor decor-top2">
-    <img src="img/bottom2.png" alt="" class="decor decor-bottom2">
-    
-    <img src="img/vector.png" alt="" class="decor vector">
-    <img src="img/vector2.png" alt="" class="decor vector2">
+      <!-- Экран 4 - Музыка -->
+      <section class="screen" id="screen4">
+        <div class="content">
+          <h2 class="music-title">
+            Звук, в котором <span class="pink">ты</span>
+          </h2>
+          <p class="music-subtitle">Каждая песня — про момент с тобой</p>
 
+          <div class="music-player">
+            <iframe
+              frameborder="0"
+              allow="clipboard-write"
+              style="border: none; width: 100%; height: 556px"
+              src="https://music.yandex.ru/iframe/playlist/ntsurikoff/1023"
+            >
+            </iframe>
+          </div>
 
+          <div class="music-buttons">
+            <a
+              href="https://music.yandex.ru/playlists/02e904c4-458e-47a3-a2d4-fee21345f047?utm_source=desktop&utm_medium=copy_link"
+              target="_blank"
+              class="btn"
+            >
+              Включить
+            </a>
+            <button class="btn">Дальше</button>
+          </div>
+        </div>
+      </section>
 
-    <div class="content">
-      <h1 class="step step-1">Все начинается с одного момента</h1>
-      <p class="step step-2">У нас их стало <br>больше</p>
-      <button class="btn step step-3">Смотреть</button>
+      <!-- Экран 5 - Послание -->
+      <section class="screen" id="screen5">
+        <div class="final-container">
+          <div class="final-text">
+            <p class="line">С тобой все стало глубже, чем ожидал.</p>
+            <p class="line">И я рад, что именно ты рядом.</p>
+            <p class="line">Это только начало.</p>
+            <p class="line">Я хочу идти дальше с тобой.</p>
+            <p class="line highlight">
+              С 14 февраля — еще один наш маленький старт.
+            </p>
+          </div>
+        </div>
+        <div class="final-button">
+          <button class="btn" id="toFinalScreen">Закрепить этот момент</button>
+        </div>
+      </section>
+
+      <!-- Экран 6 - Финальный -->
+      <section class="screen" id="screen6">
+        <div class="ultimate-container">
+          <div class="ultimate-text">
+            <p class="ultimate-line">Я выбираю тебя.</p>
+            <p class="ultimate-line">И буду выбирать дальше.</p>
+          </div>
+        </div>
+        <div class="ultimate-button">
+          <button class="text-btn" id="restart">начало</button>
+        </div>
+      </section>
     </div>
-  </section>
-
-  <!-- Экран 3 -->
-<section class="screen" id="screen3">
-
-  <!-- Вступительная надпись -->
-  <h1 class="intro-text" id="introText">
-    То, что стало <br> важным
-  </h1>
-
-  <!-- Контент хронологии -->
-  <div class="timeline-wrapper" id="timelineWrapper">
-
-    <div class="timeline">
-
-<!-- 1 -->
-<div class="timeline-item left">
-  <div class="photo-block">
-    <div class="date">30 декабря</div>
-    <img src="img/1.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Интересное знакомство. То самое сообщение, с которого всё началось
-  </div>
-</div>
-
-<!-- 2 -->
-<div class="timeline-item right">
-  <div class="photo-block">
-    <div class="date">2 января</div>
-    <img src="img/2.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Первая встреча. Прогулка, кино — и реальность оказалась даже лучше, чем в переписке
-  </div>
-</div>
-
-<!-- 3 -->
-<div class="timeline-item left">
-  <div class="photo-block">
-    <div class="date">7 января</div>
-    <img src="img/3.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Рождество. Первый подарок - маленький, но такой значимый
-  </div>
-</div>
-
-<!-- 4 -->
-<div class="timeline-item right">
-  <div class="photo-block">
-    <div class="date">8 января</div>
-    <img src="img/4.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Впервые проводил тебя до дома. <br> Так не хотелось, чтобы вечер заканчивался…
-  </div>
-</div>
-
-<!-- 5 -->
-<div class="timeline-item left">
-  <div class="photo-block">
-    <div class="date">10 января</div>
-    <img src="img/5.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Первый кружок от тебя. <br> Поймал себя на том, что пересматриваю его снова и снова
-  </div>
-</div>
-
-<!-- 6 -->
-<div class="timeline-item right">
-  <div class="photo-block">
-    <div class="date">22 января</div>
-    <img src="img/6.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Первый совместный просмотр фильма у меня дома
-  </div>
-</div>
-
-<!-- 7 -->
-<div class="timeline-item left">
-  <div class="photo-block">
-    <div class="date">28 января</div>
-    <img src="img/7.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Первый поцелуй. <br> Точка, после которой все стало иначе
-  </div>
-</div>
-
-<!-- 8 -->
-<div class="timeline-item right">
-  <div class="photo-block">
-    <div class="date">14 февраля</div>
-    <img src="img/8.png" width="161" height="161" alt="">
-  </div>
-  <div class="event-text">
-    Мой первый интерактивный подарок для тебя
-  </div>
-</div>
-
-    </div>
-
-    <div class="timeline-footer">
-      <p>И это только начало</p>
-      <button class="btn">Дальше</button>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Экран 4 -->
-<section class="screen" id="screen4">
-
-  <div class="music-container">
-
-    <h1 class="music-title">
-      Звук, в котором <span class="pink">ты</span>
-    </h1>
-
-    <p class="music-subtitle">
-      Каждая песня — про момент с тобой
-    </p>
-
-    <div class="music-player">
-      <iframe frameborder="0"
-        allow="clipboard-write"
-        style="border:none;width:614px;height:556px;"
-        width="614"
-        height="556"
-        src="https://music.yandex.ru/iframe/playlist/ntsurikoff/1023">
-      </iframe>
-    </div>
-
-    <div class="music-buttons">
-      <a href="https://music.yandex.ru/playlists/02e904c4-458e-47a3-a2d4-fee21345f047?utm_source=desktop&utm_medium=copy_link"
-         target="_blank"
-         class="btn">
-        Включить
-      </a>
-
-      <button class="btn">Дальше</button>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- Экран 5 -->
-<section class="screen" id="screen5">
-
-  <div class="final-container">
-
-    <div class="final-text">
-      <p class="line">С тобой все стало глубже, чем ожидал.</p>
-      <p class="line">И я рад, что именно ты рядом.</p>
-      <p class="line">Это только начало.</p>
-      <p class="line">Я хочу идти дальше с тобой.</p>
-      <p class="line highlight">С 14 февраля — еще один наш маленький старт.</p>
-    </div>
-
-  </div>
-
-  <div class="final-button">
-    <button class="btn" id="toFinalScreen">
-      Закрепить этот момент
-    </button>
-  </div>
-
-</section>
-
-<!-- Экран 6 -->
-<section class="screen" id="screen6">
-
-  <div class="ultimate-container">
-
-    <div class="ultimate-text">
-      <p class="ultimate-line">Я выбираю тебя.</p>
-      <p class="ultimate-line">И буду выбирать дальше.</p>
-    </div>
-
-  </div>
-
-  <div class="ultimate-button">
-    <button class="text-btn" id="restart">
-      начало
-    </button>
-  </div>
-
-</section>
-
-
-
-
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
