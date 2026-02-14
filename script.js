@@ -32,7 +32,7 @@ watchBtn.addEventListener('click', () => {
   screen2.classList.remove('screen--active');
 
   setTimeout(() => {
-    showScreen('screen3');
+    screen3.classList.add('screen--active');
 
     // показываем центральный текст
     setTimeout(() => {
@@ -127,14 +127,3 @@ restartBtn.addEventListener('click', () => {
     document.getElementById('screen1').classList.add('screen--active');
   }, 800);
 });
-
-
-function showScreen(id) {
-  document.querySelectorAll('.screen').forEach(screen => {
-    screen.classList.remove('screen--active');
-  });
-
-  document.getElementById(id).classList.add('screen--active');
-
-  window.scrollTo(0, 0);
-}
