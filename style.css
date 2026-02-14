@@ -447,13 +447,126 @@ p {
 
 
 
-@media (max-width: 768px) {
-  .timeline-item {
-    flex-direction: column !important;
-    text-align: center;
-  }
+/* Дополнительная адаптация для мобильных устройств (до 600px) */
+@media (max-width: 600px) {
+    /* Уменьшаем декоративные изображения */
+    .decor-top,
+    .decor-bottom {
+        width: 200px;
+    }
 
-  .event-text {
-    max-width: 100%;
-  }
+    .decor-top2,
+    .decor-bottom2 {
+        width: 300px;
+    }
+
+    .vector,
+    .vector2 {
+        max-width: 120px;
+        width: auto;
+        height: auto;
+    }
+
+    /* Перемещаем векторы, чтобы они не накладывались на текст */
+    .vector {
+        right: 10px;
+        top: 20%;
+        bottom: auto;
+    }
+
+    .vector2 {
+        left: 10px;
+        top: 60%;
+        bottom: auto;
+    }
+
+    /* Корона и линии */
+    .crown {
+        width: 30px;
+        top: -25px;
+    }
+
+    .lines {
+        width: 30px;
+        right: -15px;
+    }
+
+    .arrow {
+        width: 35px;
+        right: -40px;
+        bottom: 20px;
+    }
+
+    /* Компактные кнопки */
+    .btn {
+        padding: 12px 30px;
+        font-size: 14px;
+    }
+
+    /* Контент второго экрана поверх декора */
+    #screen2 .content {
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Таймлайн */
+    .timeline-item {
+        gap: 20px;
+    }
+
+    .date {
+        font-size: 12px;
+    }
+
+    .event-text {
+        font-size: 14px;
+    }
+
+    /* Адаптивный плеер Яндекс.Музыки (сохраняем пропорции) */
+    .music-player {
+        position: relative;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .music-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .music-player::before {
+        content: "";
+        display: block;
+        padding-bottom: calc(556 / 614 * 100%); /* 90.55% */
+    }
+
+    /* Финальные экраны */
+    .final-text {
+        gap: 15px;
+    }
+
+    .line {
+        font-size: 18px;
+    }
+
+    .highlight {
+        font-size: 20px;
+    }
+
+    .ultimate-line {
+        font-size: 22px;
+    }
+
+    .final-button,
+    .ultimate-button {
+        bottom: 20px;
+    }
 }
+
+
+
+
