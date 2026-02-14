@@ -13,12 +13,10 @@ body {
 
 /* Общий экран */
 .screen {
-  position: absolute;
+  position: fixed;       /* вместо absolute */
   inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  width: 100%;
+  height: 100vh;
   opacity: 0;
   transition: opacity 1s ease;
   pointer-events: none;
@@ -431,4 +429,5 @@ p {
 .text-btn:hover {
   opacity: 1;
 }
+
 
