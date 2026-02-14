@@ -34,6 +34,7 @@ body {
   position: relative;
 }
 
+
 .content {
   max-width: 800px;
   padding: 20px;
@@ -99,7 +100,6 @@ p {
 /* Фон первого экрана */
 .screen--hero {
   background: linear-gradient(135deg, #111 0%, #000 100%);
-  position: absolute;
   overflow: hidden;
 }
 
@@ -200,12 +200,8 @@ p {
 
 /* Экран 3 */
 #screen3 {
-  position: absolute;
-  inset: 0;
   background: #000;
   padding: 60px 20px;
-
-  display: block;          /* отключаем flex */
   text-align: center;      /* центрируем текст */
 }
 /* Центровая надпись */
@@ -287,10 +283,7 @@ p {
 
 /* Экран 4 */
 #screen4 {
-  position: absolute;
-  inset: 0;
   background: #111;
-  display: block;
   padding: 80px 20px;
   text-align: center;
 }
@@ -327,6 +320,8 @@ p {
   gap: 20px;
   flex-wrap: wrap;
 }
+
+
 
 
 
@@ -462,4 +457,3 @@ p {
     max-width: 100%;
   }
 }
-
