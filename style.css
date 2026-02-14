@@ -373,10 +373,14 @@ p {
 }
 
 .music-player iframe {
-  margin-bottom: 40px;
+  border: none;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  aspect-ratio: 1 / 1; /* сохраняет квадрат при любой ширине */
   border-radius: 12px;
-  display: block;       /* чтобы убрать лишние отступы */
-  margin: 0 auto;       /* центрирование, если нужно */
+  display: block;
+  margin: 0 auto 40px auto; /* отступ снизу 40px */
 }
 
 .music-player iframe {
